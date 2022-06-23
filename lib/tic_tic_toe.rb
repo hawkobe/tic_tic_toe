@@ -1,3 +1,6 @@
+require './player.rb'
+require './board.rb'
+
 class TicTacToe
     attr_reader :tic_tac_toe_board, :player1, :player2, :current_player
   
@@ -11,7 +14,7 @@ class TicTacToe
             "just ask the person right next to you. Good luck!"
       assign_player_one
       assign_player_two
-      puts "\nPhew! Lots of work, lets get to the fun stuff!"
+      puts "\nPhew! That was a lot of work, lets get to the fun stuff!"
       puts "Here's what your starting board looks like:"
       tic_tac_toe_board.print_board
       game_loop
@@ -56,16 +59,12 @@ class TicTacToe
           selection = move
           tic_tac_toe_board.update_board(selection, current_player.token)
           tic_tac_toe_board.print_board
-          if current_player.player_win?(tic_tac_toe_board)
-            puts "Nice, you won the game #{current_player.player_name}!"
-            break
-          end
+          puts game_win_message if current_player.player_win?(tic_tac_toe_board)
+          break if current_player.player_win?(tic_tac_toe_board)
           @current_player = change_player
-          if !available_positions?
-            puts "Cats game!"
-          end
+          puts tie_game_message unless available_positions?
         end
-      break if !available_positions?
+      break unless available_positions?
       end
     end
 
@@ -77,4 +76,6 @@ class TicTacToe
         "Ah shucks! Cats game! Better luck next time."
     end
   end
+
+  TicTacToe.new.start_game
   
