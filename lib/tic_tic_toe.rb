@@ -68,5 +68,13 @@ class TicTacToe
       break if !available_positions?
       end
     end
+
+    def game_win_message
+        "Well played, #{current_player.player_name}. You won the game!"
+    end
+
+    def tie_game_message
+        "Ah shucks! Cats game! Better luck next time."
+    end
   end
   
