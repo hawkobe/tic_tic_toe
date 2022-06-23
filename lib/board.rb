@@ -2,7 +2,14 @@ class Board
     attr_reader :board, :board_start, :board_end
   
     def initialize
-      @board = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+      @n = 0
+      @board = 
+        Array.new(3) do |array|
+            Array.new(3) do |elem|
+                elem = @n + 1
+                @n += 1
+            end
+        end
     end
   
     def print_board
@@ -88,4 +95,3 @@ class Board
       return true if board.flatten.include?(player_selection)
     end
   end
-  
