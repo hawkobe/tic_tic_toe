@@ -1,5 +1,5 @@
-require 'tic_tac_toe.rb'
-require 'player.rb'
-require 'board.rb'
+require '.lib/tic_tac_toe.rb'
+require '.lib/player.rb'
+require '.lib/board.rb'
 
 TicTacToe.new.start_game
