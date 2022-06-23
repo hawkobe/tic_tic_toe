@@ -25,7 +25,7 @@ class TicTacToe
       name_player1 = gets.chomp
       puts "\nOkay #{name_player1}, now pick a non-numeric symbol to mark your moves"
       token_player1 = gets.chomp
-      until token_player1.match(/\W|[a-zA-Z]/)
+      until token_player1.match(/\W|^[a-zA-Z]$/)
         puts "That doesn't fit the specified parameters, please enter a new symbol"
         token_player1 = gets.chomp
       end
@@ -38,7 +38,7 @@ class TicTacToe
       name_player2 = gets.chomp
       puts "\nOkay #{name_player2}, now pick a non-numeric symbol to mark your moves"
       token_player2 = gets.chomp
-      until token_player2.match(/\W|\[a-zA-Z]/)
+      until token_player2.match(/\W|\^[a-zA-Z]$/)
         puts "That doesn't fit the specified parameters, please enter a new symbol"
         token_player2 = gets.chomp
       end
