@@ -1,5 +1,5 @@
-require './player.rb'
-require './board.rb'
+require './lib/player.rb'
+require './lib/board.rb'
 
 class TicTacToe
     attr_reader :tic_tac_toe_board, :player1, :player2, :current_player
@@ -38,7 +38,7 @@ class TicTacToe
       name_player2 = gets.chomp
       puts "\nOkay #{name_player2}, now pick a non-numeric symbol to mark your moves"
       token_player2 = gets.chomp
-      until token_player2.match(/\W|\^[a-zA-Z]$/)
+      until token_player2.match(/\W|^[a-zA-Z]$/)
         puts "That doesn't fit the specified parameters, please enter a new symbol"
         token_player2 = gets.chomp
       end
