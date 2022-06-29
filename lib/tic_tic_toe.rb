@@ -1,5 +1,5 @@
-require './player.rb'
-require './board.rb'
+require './lib/player.rb'
+require './lib/board.rb'
 
 class TicTacToe
   attr_reader :tic_tac_toe_board, :player1, :player2, :current_player
@@ -42,6 +42,14 @@ class TicTacToe
     until token_player2.match(/\W|^[a-zA-Z]$/)
       puts "That doesn't fit the specified parameters, please enter a new symbol"
       token_player2 = gets.chomp
+<<<<<<< HEAD
+=======
+      until token_player2.match(/\W|^[a-zA-Z]$/)
+        puts "That doesn't fit the specified parameters, please enter a new symbol"
+        token_player2 = gets.chomp
+      end
+      @player2 = Player.new(name_player2, token_player2)
+>>>>>>> 9fc2dff57b4b74790a43d7be9b2262222f410c1a
     end
     @player2 = Player.new(name_player2, token_player2)
   end
